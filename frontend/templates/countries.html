@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,
+          initial-scale=1.0">
+
+    <title>Страны</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous">
+    </script>
+
+    <style>
+
+    </style>
+
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand p-0" href="{{ url_for('index') }}">
+        <img src="{{ url_for ('static', filename='img/TV.png') }}" alt="logo" width="40">
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">Домашняя страница</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('countries') }}">Страны</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('feedback') }}">Обратная связь</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="counter">Счетчик</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center my-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img2.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Китай</h5>
+
+            <p class="card-text">Китай — крупнейшая в мире страна с богатой историей,
+              впечатляющим культурным наследием и быстроразвивающейся экономикой.</p>
+
+            <a href="{{ url_for('china') }}" class="btn btn-primary">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img3.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Турция</h5>
+
+            <p class="card-text">Турция воссоздаёт великолепное единство истории,
+              культуры и живописных прибрежных уголков, где сочетаются величие памятников,
+              гостеприимство и удивительные пейзажи.</p>
+
+            <a href="#" class="btn btn-primary">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img5.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Узбекистан</h5>
+
+            <p class="card-text">В Узбекистане великолепно сочетаются богатая культура,
+              живописные пейзажи и гостеприимство народа — старое и новое в гармонии. </p>
+
+            <a href="#" class="btn btn-primary">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img4.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">США</h5>
+
+            <p class="card-text">"США — крупная страна с разнообразной культурой,
+              экономикой мирового уровня и конституционной политической системой."</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img7.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Великобритания</h5>
+
+            <p class="card-text">Великобритания — страна с богатой историей,
+              культурным наследием и прогрессивным образом жизни.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img8.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Индия</h5>
+
+            <p class="card-text">Индия — удивительная страна с богатой историей,
+              культурным разнообразием и впечатляющими природными красотами.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img9.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Новая Зеландия</h5>
+
+            <p class="card-text">Новая Зеландия впечатляет своей природой,
+              дружелюбными людьми и инновационным развитием.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img10.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Конго</h5>
+
+            <p class="card-text">Конго — африканская страна с удивительным природным богатством,
+              древней культурой и гостеприимным народом.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img11.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Чили</h5>
+
+            <p class="card-text">Чили впечатляет своими живописными пейзажами,
+              культурным разнообразием и динамичным образом жизни.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img12.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Вьетнам</h5>
+
+            <p class="card-text">Вьетнам славится тропическими пейзажами, культурным наследием,
+              фееричной кухней, и дружелюбными людьми.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img13.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Хорватия</h5>
+
+            <p class="card-text">Хорватия — средиземноморская жемчужина с кристальным морем,
+              старинными городами и культурным богатством.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img14.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Ирландия</h5>
+
+            <p class="card-text">Ирландия — зеленая страна с древней архитектурой,
+              впечатляющими пейзажами и историческими достопримечательностями.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img15.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Перу</h5>
+
+            <p class="card-text">Перу впечатляет горным ландшафтом, древними археологическими находками,
+              многообразием климатов.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img16.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Швейцария</h5>
+
+            <p class="card-text">Швейцария — альпийская страна с изумительными пейзажами,
+              банковской стабильностью и высоким уровнем жизни.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <img src="{{ url_for ('static', filename='img/img17.jpg') }}" class="card-img-top" alt="My image" width="400px" height="400px">
+          <div class="card-body">
+
+            <h5 class="card-title text-center">Италия</h5>
+
+            <p class="card-text">Италия — страна с богатым наследием искусства, величественной архитектурой,
+              изысканной кухней и живописными пейзажами.</p>
+
+            <a href="#" class="btn btn-primary ">Узнать больше</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </body>
+  <script src="{{ url_for('static', filename='js/counter.js') }}"></script>
+</html>

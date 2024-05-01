@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        /* Дополнительные стили для формы */
+        .feedback-div {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .hfeedback {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form {
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand p-0" href="{{ url_for('index') }}">
+        <img src="{{ url_for ('static', filename='img/TV.png') }}" alt="logo" width="40">
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{{ url_for('index') }}">Домашняя страница</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="{{ url_for('countries') }}">Страны</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ url_for('feedback') }}">Обратная связь</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="feedback-div">
+    <h1 class="hfeedback gradient-text">Здесь Вы можете запросить обратную связь </h1>
+</div>
+
+<form class="feedback-form" method="POST" action="/submit_feedback">
+    <div class="mb-3">
+        <label for="username" class="form-label">Имя:</label>
+        <input type="text" class="form-control" id="username" name="username">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Электронная почта:</label>
+        <input type="email" class="form-control" id="email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="message" class="form-label">Сообщение:</label>
+        <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+    </div>
+    <!-- Добавляем капчу -->
+    <div class="g-recaptcha" data-sitekey="6LdMZc0pAAAAAKLnAyb_JSxqvbHllbMrMnZIeXee"></div>
+    <br>
+    <button type="submit" class="btn btn-primary gradient-button">Отправить</button>
+</form>
+</body>
+</html>
