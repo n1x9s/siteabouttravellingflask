@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.9
 
 WORKDIR /siteabouttravellingflask
 
@@ -12,6 +12,6 @@ COPY backend/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV FLASK_APP=run.py
+ENV FLASK_APP=app.py
 
-CMD ["python3", "run.py"]
+CMD ["python", "/siteabouttravellingflask/run.py"]
