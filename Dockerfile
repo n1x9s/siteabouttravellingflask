@@ -1,17 +1,21 @@
-FROM python:3.9
+# Используем базовый образ Python
+FROM python:3.12
 
-WORKDIR /siteabouttravellingflask
+# Устанавливаем рабочую директорию внутри контейнера
+WORKDIR /app
 
-COPY frontend/templates/404.html ./templates/404.html
-COPY frontend/templates/china.html ./templates/china.html
-COPY frontend/templates/index.html ./templates/index.html
-COPY frontend/templates/countries.html ./templates/countries.html
-COPY frontend/templates/feedback.html ./templates/feedback.html
+# Копируем необходимые файлы из хоста внутрь контейнера
+COPY templates ./templates
+COPY static ./static
+COPY feedback.json /app/feedback.json
+COPY requirements.txt .
+COPY app.py .
 
-COPY backend/requirements.txt .
+# Устанавливаем зависимости Python
+RUN pip install -r requirements.txt
 
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Устанавливаем переменную окружения FLASK_APP
 ENV FLASK_APP=app.py
 
-CMD ["python", "/siteabouttravellingflask/run.py"]
+# Запускаем Flask приложение при старте контейнера
+CMD ["flask", "run", "--host=0.0.0.0", "--debug"]

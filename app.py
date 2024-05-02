@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import json
 import requests
 
-app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
+app = Flask(__name__)
 
 # Установите свой секретный ключ reCAPTCHA здесь
 RECAPTCHA_SECRET_KEY = '6LdMZc0pAAAAAIEOcpg0ss7gUWVreX-dp28pnqSu'
@@ -70,3 +70,8 @@ def verify_recaptcha(recaptcha_response):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
+
+
+if __name__ == '__main__':
+    app.run()
+
